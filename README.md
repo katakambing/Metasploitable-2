@@ -9,7 +9,7 @@ Author: (aka katakambing)
 
 ## Note
 
-This walkthrough documents the enumeration and exploitation of services found running on Metasploitable 2. Each step outlines the commands used, observations made, and outcomes of exploitation attempts. This is for educational and portfolio-building purposes only. Do not attempt unauthorized access on systems you do not own or have explicit permission to test.
+This walkthrough documents the enumeration and exploitation of services found running on Metasploitable 2. Each step outlines the commands used, observations made, and outcomes of exploitation attempts. This is for educational and portfolio-building purposes only. For beginner learning 
 
 ---
 
