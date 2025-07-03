@@ -1,0 +1,10 @@
+psql -h 10.0.2.5 -U postgres
+password postgres
+SELECT usename FROM pg_user;
+-- Output: postgres
+SELECT datname FROM pg_database;
+-- Output: template1, template0, postgres
+SELECT schemaname, tablename FROM pg_tables;
+\c postgres
+\dt *.*
+
