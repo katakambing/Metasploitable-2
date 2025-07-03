@@ -1,0 +1,8 @@
+telnet 10.0.2.5
+
+msfadmin - username
+msfadmin - password 
+
+whoami
+id
+uname -a
